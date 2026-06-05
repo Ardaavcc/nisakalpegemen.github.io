@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisa ❤️ Egemen</title>
+    <style>
+        /* Genel Tasarım ve Arka Plan */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f0ff 0%, #e8dbff 100%);
+            color: #4a3b68;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            max-width: 500px;
+            width: 90%;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(155, 81, 224, 0.15);
+            text-align: center;
+        }
+
+        /* Başlıklar */
+        h1 {
+            color: #d11a2a;
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #6c5ce7;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        /* Sayaç Alanı */
+        .counter-box {
+            background: #f8f5ff;
+            border: 2px dashed #b2bec3;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+
+        .counter-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #a29bfe;
+            margin-bottom: 5px;
+        }
+
+        #timer {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #6c5ce7;
+        }
+
+        /* Fotoğraf Galerisi */
+        .gallery-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .photos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .photo-slot {
+            background: #eee;
+            height: 150px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 0.9rem;
+            overflow: hidden;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .photo-slot:hover {
+            transform: scale(1.03);
+        }
+
+        /* Görsel eklemek isterseniz buradaki src kısımlarını doldurabilirsiniz */
+        .photo-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Mektup Alanı */
+        .letter-box {
+            background: #fff0f5;
+            border-left: 5px solid #6c5ce7;
+            padding: 20px;
+            border-radius: 0 15px 15px 0;
+            text-align: left;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .letter-title {
+            font-weight: bold;
+            font-style: normal;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #6c5ce7;
+        }
+
+        /* Sürpriz Butonu */
+        .surprise-btn {
+            background: #6c5ce7;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        }
+
+        .surprise-btn:hover {
+            background: #5b4cc4;
+            box-shadow: 0 7px 20px rgba(108, 92, 231, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Gizli Mesaj */
+        .hidden-message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffeaa7;
+            border-radius: 10px;
+            color: #d63031;
+            font-weight: bold;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Nisa ❤️ Egemen</h1>
+        <div class="subtitle">16 Mart 2026'da başlayan hikayemiz 💜</div>
+
+        <!-- Sayaç -->
+        <div class="counter-box">
+            <div class="counter-title">Birlikte Geçen Süre</div>
+            <div id="timer">Hesaplanıyor...</div>
+        </div>
+
+        <!-- Fotoğraflar -->
+        <div class="gallery-title">Fotoğraflarımız 📸</div>
+        <div class="photos">
+            <!-- Fotoğraflarınızı eklemek için 'resim-adi.jpg' yerlerini kendi fotoğraflarınızla değiştirin -->
+            <div class="photo-slot"><img src="https://i.imgur.com/pijEyTg_d.webp?maxwidth=760&fidelity=grand" alt="Fotoğraf 1"></div>
+            <div class="photo-slot"><img src="https://i.imgur.com/qtUAg6S.jpeg" alt="Fotoğraf 2"></div>
+            <div class="photo-slot"><img src="https://i.imgur.com/PbBRZRC.png" alt="Fotoğraf 3"></div>
+            <div class="photo-slot"><img src="https://i.imgur.com/gMyFCaE.png" alt="Fotoğraf 4"></div>
+        </div>
+
+        <!-- Mektup -->
+        <div class="letter-box">
+            <div class="letter-title">Nisa'ya 💌</div>
+            16 Mart'ta başlayan konuşmalarımız ve 18 Mart'taki ilk buluşmamız, hayatımın en güzel anıları arasında. Yanında kendim gibi olabildiğim, gülüşünü görünce mutlu olduğum kişi sensin. İyi ki varsın Nisa. 💜
+        </div>
+
+        <!-- Sürpriz -->
+        <button class="surprise-btn" onclick="toggleSurprise()">💜 Sürprizi Aç</button>
+        <div id="surpriseMessage" class="hidden-message">
+            Seni çok seviyorum! Dünyanın en şanslı insanıyım. 🌟✨
+        </div>
+    </div>
+
+    <script>
+        // Canlı Sayaç Fonksiyonu (Başlangıç: 16 Mart 2026)
+        const startDate = new Date("2026-03-16T00:00:00").getTime();
+
+        setInterval(function() {
+            const now = new Date().getTime();
+            const difference = now - startDate;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML = 
+                days + " Gün " + hours + " Saat " + minutes + " Dakika " + seconds + " Saniye";
+        }, 1000);
+
+        // Sürpriz Butonu Fonksiyonu
+        function toggleSurprise() {
+            const msg = document.getElementById("surpriseMessage");
+            if (msg.style.display === "block") {
+                msg.style.display = "none";
+            } else {
+                msg.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
